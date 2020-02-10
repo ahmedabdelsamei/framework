@@ -1,0 +1,60 @@
+spring:
+  application:
+    name: vc.int.dynamic.rest
+#  cloud:
+#    consul:
+#        host: consul
+#        port: 8500     
+  activemq:
+    broker-url: ${BROKER_IP:tcp://127.0.0.1:61616}
+    user: ${BROKER_USER:admin}
+    password: ${BROKER_PASS:admin}
+#    
+#  kafka:
+#    bootstrap-servers:
+#    - kafka-zookeeper:9092
+#    producer:
+#      bootstrap-servers:
+#      - kafka-zookeeper:9092
+#    stream:
+#      bindings:
+#       session:
+#          producer:
+#            useNativeEncoding: true 
+#          contentType: application/json 
+#  stream: 
+#    kafka:
+#      binder:
+#        brokers:
+#        - kafka-zookeeper:9092
+#        autoCreateTopics: false
+#        autoAddPartitions: true
+#      bindings:
+#        output:
+#          destination: integration-topic
+#  sleuth:
+#    sampler:
+#      percentage: 1.0
+#  zipkin:
+#    service:
+#      name: vc-integration  
+    
+server:
+  port: 8383
+  undertow:
+    worker-threads: 64
+  #servlet-path: /*
+  
+path:
+  File: E:\liquid\integrationFramework_Configuration\resource
+#/resource      
+queues:
+  input-queue: vc-integration-bm-req
+  output-queue: vc-integration-bm-res
+log:
+  queue: vc-integration-logs
+
+logging:
+  file: E:\product\IntegrationFramework\logs\vc.rest #${LOGGING_FILE_PATH}
+  #/logs/vc.rest
+  file-log-level: TRACE #${LOGGING_FILE_LEVEL}

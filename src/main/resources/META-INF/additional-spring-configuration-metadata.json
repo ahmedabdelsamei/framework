@@ -1,0 +1,47 @@
+{"properties": [
+  {
+    "name": "queues.input-queue",
+    "type": "java.lang.String",
+    "description": "A description for 'queues.input-queue'"
+  },
+  {
+    "name": "queues.output-queue",
+    "type": "java.lang.String",
+    "description": "A description for 'queues.output-queue'"
+  },
+  {
+    "name": "Mobile-operator",
+    "type": "java.lang.String",
+    "description": "A description for 'Mobile-operator'"
+  },
+  {
+    "name": "redis.ttl-in-minutes",
+    "type": "java.lang.String",
+    "description": "A description for 'redis.ttl-in-minutes'"
+  },
+  {
+    "name": "redis.ttl-in-minutes",
+    "type": "java.lang.String",
+    "description": "A description for 'redis.ttl-in-minutes'"
+  },
+  {
+    "name": "redis.ttl-in-minutes",
+    "type": "java.lang.String",
+    "description": "A description for 'redis.ttl-in-minutes'"
+  },
+  {
+    "name": "redis.ttl-in-minutes",
+    "type": "java.lang.String",
+    "description": "A description for 'redis.ttl-in-minutes'"
+  },
+  {
+    "name": "integration.date-format-pattern",
+    "type": "java.lang.String",
+    "description": "A description for 'integration.date-format-pattern'"
+  },
+  {
+    "name": "redis.ttl-in-minutes",
+    "type": "java.lang.String",
+    "description": "A description for 'redis.ttl-in-minutes'"
+  }
+]}

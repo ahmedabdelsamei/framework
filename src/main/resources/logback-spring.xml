@@ -1,0 +1,49 @@
+<configuration>
+
+    <springProperty scope="context" name="logging.file" source="logging.file"/>
+	<springProperty scope="context" name="logging.file-log-level" source="logging.file-log-level"/> 
+	
+
+   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+
+      <encoder>
+
+         <!--<pattern>%d %highlight(%-5level) [%thread] %logger{36} %class{36}.%M\(%line\) : %msg%n</pattern>-->
+		  <pattern>%d %highlight(%-5level) %logger{36} %class{36}.%M\(%line\) : %msg%n</pattern>
+
+      </encoder>
+
+   </appender>
+   
+   
+ <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+	  <file>${logging.file}/frameworkLog</file>
+
+	  <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+		  <!--<pattern>%d %highlight(%-5level) [%thread] %logger{36} %class{36}.%M\(%line\) : %msg%n</pattern>-->
+		  <pattern>%d %-5level [%thread] %logger{36} %class{36}.%M\(%line\) : %msg%n</pattern>
+	  </encoder>
+
+	  <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${logging.file}/frameworkLog.%d{yyyy-MM-dd}.%i.log
+                        </fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>300MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+
+	</appender>
+   
+   
+    <logger name="filelogger" level="${logging.file-log-level}" additivity="false">
+            <appender-ref ref="FILE"/>
+			<appender-ref ref="STDOUT" />
+    </logger>
+   
+   <root level="Info">
+      <appender-ref ref="STDOUT" />
+   </root>
+</configuration>
